@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 class ProductController extends ChangeNotifier {
   bool isLoading = false;
 
+  bool isLike = false;
+
   ProductController() {
     getProduct();
   }
@@ -27,5 +29,15 @@ class ProductController extends ChangeNotifier {
         notifyListeners();
       }
     });
+  }
+
+  void changeLikeColor() {
+    if (isLike == false) {
+      isLike = true;
+      notifyListeners();
+    } else {
+      isLike = false;
+      notifyListeners();
+    }
   }
 }

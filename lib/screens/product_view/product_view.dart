@@ -68,10 +68,25 @@ class ScreenProduct extends StatelessWidget {
                             ),
                           ),
                         ),
-                        const Icon(
-                          Icons.favorite_border,
-                          color: blackColor,
-                        ),
+                        data.isLike == false
+                            ? GestureDetector(
+                                onTap: () {
+                                  data.changeLikeColor();
+                                },
+                                child: const Icon(
+                                  Icons.favorite_border,
+                                  color: blackColor,
+                                ),
+                              )
+                            : GestureDetector(
+                                onTap: () {
+                                  data.changeLikeColor();
+                                },
+                                child: const Icon(
+                                  Icons.favorite_sharp,
+                                  color: redColor,
+                                ),
+                              ),
                       ],
                     ),
                   ),
