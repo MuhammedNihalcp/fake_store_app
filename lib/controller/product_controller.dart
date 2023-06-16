@@ -5,6 +5,10 @@ import 'package:flutter/material.dart';
 class ProductController extends ChangeNotifier {
   bool isLoading = false;
 
+  ProductController() {
+    getProduct();
+  }
+
   List<ProductModel> productList = [];
 
   ProductService productService = ProductService();

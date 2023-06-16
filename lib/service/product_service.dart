@@ -14,6 +14,7 @@ class ProductService {
       Response response = await dio.get(url.baseUrl);
       log(response.statusCode.toString(), name: 'product status code');
       if (response.statusCode == 200 || response.statusCode == 201) {
+        log(response.data.toString(), name: 'product response');
         List<ProductModel> result = (response.data as List)
             .map(
               (e) => ProductModel.fromJson(e),
