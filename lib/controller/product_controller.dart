@@ -40,4 +40,20 @@ class ProductController extends ChangeNotifier {
       notifyListeners();
     }
   }
+
+  void highToLowFilterList() {
+    productList.sort((first, second) => second.price.compareTo(first.price));
+    notifyListeners();
+  }
+
+  void lowToHighFilterList() {
+    productList.sort((first, second) => first.price.compareTo(second.price));
+    notifyListeners();
+  }
+
+  void consumerRatingFilterList() {
+    productList.sort(
+        (first, second) => second.rating.rate.compareTo(first.rating.rate));
+    notifyListeners();
+  }
 }
